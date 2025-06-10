@@ -1,0 +1,100 @@
+.swing-minigame-container {
+  width: 90%;
+  max-width: 500px;
+  height: 80%;
+  max-height: 600px;
+  background: #87ceeb url("../../assets/images/sky.jpg") center/cover;
+  border: 4px solid #4682b4;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  overflow: hidden;
+}
+
+.swing-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 1.5em;
+  border-bottom: 2px solid #4682b4;
+  text-shadow: 1px 1px 2px black;
+}
+
+.swing-game-area {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.swing-pivot {
+  position: absolute;
+  top: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: #5d4037;
+  border-radius: 50%;
+  border: 2px solid #3e2723;
+}
+
+.swing-rope {
+  position: absolute;
+  width: 4px;
+  height: 150px;
+  background-color: #8d6e63;
+  top: 20px;
+  transform-origin: top center;
+  transition: transform 0.1s linear;
+}
+
+.swing-seat {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 10px;
+  background-color: #a1887f;
+  border-radius: 5px;
+}
+
+.swing-prompt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5em;
+  color: white;
+  background-color: rgba(255, 193, 7, 0.8);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 2px 2px 4px black;
+  animation: prompt-pulse 1s infinite;
+}
+
+@keyframes prompt-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.swing-instructions {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 1em;
+  border-top: 2px solid #4682b4;
+}

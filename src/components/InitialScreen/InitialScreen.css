@@ -1,0 +1,241 @@
+/* src/components/InitialScreen/InitialScreen.css */
+
+.initial-screen-container {
+  font-family: '"Press Start 2P"', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+  animation: fadeInScreen 0.5s ease-in-out;
+}
+
+.greeting-container,
+.main-content {
+  position: relative;
+  z-index: 10;
+  background-color: #87ceeb;
+  padding: 30px 40px;
+  border-radius: 15px;
+  border: 4px solid #4682b4;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+}
+
+.greeting-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.greeting-container h1 {
+  color: #002d62;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+.greeting-container p {
+  color: #002d62;
+  font-size: 1em;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+.greeting-container button {
+  padding: 15px 40px;
+  font-size: 1.5em;
+  font-family: '"Press Start 2P"', cursive;
+  color: white;
+  background-color: #28a745;
+  border: 3px solid #1c6c2e;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.greeting-container.fade-in,
+.main-content.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+.greeting-container.fade-out,
+.main-content.fade-out {
+  animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+.plane-icon {
+  width: 60px;
+  margin-bottom: 20px;
+  image-rendering: pixelated;
+}
+
+.game-title,
+.select-prompt,
+.character-name {
+  color: #002d62;
+  text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.7);
+}
+
+.game-title {
+  font-size: 1.5em;
+  margin-bottom: 25px;
+}
+
+.select-prompt {
+  font-size: 1em;
+  margin-bottom: 15px;
+}
+
+.character-slider {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.slider-arrow {
+  background: none;
+  border: 3px solid #002d62;
+  color: #002d62;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.slider-arrow:hover {
+  background-color: rgba(0, 45, 98, 0.1);
+  transform: scale(1.1);
+}
+
+.slider-viewport {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-filmstrip {
+  display: flex;
+  height: 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.character-slide {
+  width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 5px;
+}
+
+.character-image {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  image-rendering: pixelated;
+}
+
+.character-name {
+  font-size: 1em;
+}
+
+.player-name-input {
+  padding: 20px 15px;
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 3px solid #4682b4;
+  border-radius: 12px;
+  font-family: '"Press Start 2P"', cursive;
+}
+
+.player-name-input::placeholder {
+  font-family: '"Press Start 2P"', cursive;
+  color: #999;
+  text-align: center;
+  font-size: 1em;
+}
+
+.start-exploring-button {
+  padding: 12px 30px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: bold;
+  color: white;
+  background-color: #28a745;
+  border: 3px solid #1c6c2e;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: '"Press Start 2P"', cursive;
+}
+
+.start-exploring-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.slider-filmstrip.no-transition {
+  transition: none;
+}
+
+@keyframes fadeInScreen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

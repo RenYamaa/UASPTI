@@ -1,0 +1,95 @@
+/* --- Awan dan Pohon --- */
+/* Styling ini bisa kamu salin dari InitialScreen.css agar konsisten, atau pakai yang ini */
+.clouds-css {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+.cloud-css {
+    position: absolute;
+    background: #f2f9fe;
+    box-shadow: 0 8px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    opacity: 0.9;
+}
+.cloud-css::before, .cloud-css::after {
+    content: '';
+    position: absolute;
+    background: #f2f9fe;
+    border-radius: 50%;
+    box-shadow: inherit;
+}
+.cloud-css-1 {
+    width: 180px; height: 100px;
+    top: 15%;
+    animation: moveCloudHorizontal 30s linear infinite alternate;
+}
+.cloud-css-1::before { width: 100px; height: 100px; top: -50px; left: 30px; }
+.cloud-css-1::after { width: 120px; height: 80px; top: -30px; right: 20px; }
+.cloud-css-2 {
+    width: 120px; height: 70px;
+    top: 25%;
+    animation: moveCloudHorizontal 45s linear infinite 1s alternate-reverse;
+}
+.cloud-css-2::before { width: 70px; height: 70px; top: -35px; left: 20px; }
+.cloud-css-2::after { width: 80px; height: 50px; top: -20px; right: 15px; }
+.cloud-css-3 {
+    width: 220px; height: 120px;
+    top: 8%;
+    opacity: 0.7;
+    animation: moveCloudHorizontal 60s linear infinite;
+}
+.cloud-css-3::before { width: 130px; height: 130px; top: -60px; left: 40px; }
+.cloud-css-3::after { width: 150px; height: 100px; top: -40px; right: 30px; }
+
+@keyframes moveCloudHorizontal {
+    0% { transform: translateX(-250px); }
+    100% { transform: translateX(calc(100vw + 100px)); }
+}
+
+.trees-container {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 30%;
+    z-index: 5;
+    pointer-events: none;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    padding: 0 5%;
+}
+/* KODE BARU di Scenery.css */
+.tree {
+    position: relative;
+    /* KEMBALIKAN flex untuk menengahkan batang pohon kiri */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* DITAMBAHKAN: Aturan khusus untuk menimpa gaya pohon ke-2 */
+.tree.tree-style-2 {
+    /* Batalkan display: flex dari .tree di atas, 
+       ganti jadi block biasa agar pohon SVG tidak bug */
+    display: block;
+}
+
+.tree-trunk {
+    width: 20px; 
+    height: 80px;
+    background-color: #5D4037;
+    border-radius: 5px 5px 0 0;
+}
+
+.tree-canopy {
+    background-color: #4CAF50;
+    border-radius: 50%;
+    position: absolute;
+}
+.tree-canopy-1 { width: 80px; height: 80px; bottom: 60px; z-index: 3; }
+.tree-canopy-2 { width: 70px; height: 70px; bottom: 75px; left: -30px; background-color: #388E3C; z-index: 2; }
+.tree-canopy-3 { width: 70px; height: 70px; bottom: 75px; right: -30px; background-color: #66BB6A; z-index: 2; }
+.tree-style-2 .tree-trunk { width: 15px; height: 60px; background-color: #A1887F; }
+.tree-style-2 .tree-canopy-svg { width: 100px; height: 100px; position: absolute; bottom: 45px; left: 50%; transform: translateX(-50%); }

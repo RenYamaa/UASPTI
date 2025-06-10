@@ -1,0 +1,120 @@
+.trampoline-minigame-container {
+  width: 90%;
+  max-width: 400px;
+  height: 80%;
+  max-height: 600px;
+  background: #3a506b;
+  border: 4px solid #1c2541;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* --- PERUBAHAN 1: Efek Getar --- */
+.trampoline-minigame-container.shake {
+  animation: shake-effect 0.3s ease-in-out;
+}
+
+@keyframes shake-effect {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px) rotate(-1deg);
+  }
+  50% {
+    transform: translateX(5px) rotate(1deg);
+  }
+  75% {
+    transform: translateX(-5px) rotate(-1deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+.trampoline-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5em;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #1c2541;
+}
+
+.trampoline-instructions {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1em;
+}
+
+.trampoline-game-area {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.jump-track {
+  position: relative;
+  width: 60px;
+  height: 90%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 2px solid #1c2541;
+}
+
+.jump-zone {
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.jump-zone.good {
+  height: 50%;
+  bottom: 25%;
+  background-color: rgba(255, 255, 0, 0.4);
+  border-radius: 10px;
+}
+
+.jump-zone.perfect {
+  height: 20%;
+  bottom: 40%;
+  background-color: rgba(76, 175, 80, 0.6);
+}
+
+.jump-bar {
+  position: absolute;
+  width: 120%;
+  height: 5px;
+  background-color: #ff6b6b;
+  left: -10%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ff6b6b;
+}
+
+.jump-feedback {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  color: #ffc107;
+  text-shadow: 2px 2px 2px black;
+  animation: feedback-anim 0.5s ease-out;
+}
+
+@keyframes feedback-anim {
+  from {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50px) scale(1.5);
+  }
+}

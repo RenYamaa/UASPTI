@@ -1,0 +1,109 @@
+/* src/components/StartScreen/StartScreen.css */
+
+.start-screen-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: fadeInScreen 0.5s ease-in-out;
+}
+
+.start-content-wrapper {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.start-plane-icon {
+  width: 80px;
+  image-rendering: pixelated;
+  margin-bottom: 20px;
+  animation: flyAndBob 4s ease-in-out infinite;
+}
+
+.start-title {
+  font-family: '"Press Start 2P"', cursive;
+  font-size: 2.2em;
+  color: white;
+  text-shadow: 3px 3px 0px #002d62;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.start-button {
+  padding: 20px 80px;
+  background-color: #28a745;
+  color: white;
+  border: 4px solid #1c6c2e;
+  border-radius: 12px;
+  font-family: '"Press Start 2P"', cursive;
+  font-size: 2em;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  box-shadow: 8px 8px 0px #1c6c2e;
+  animation: pulse 2.5s infinite;
+}
+
+.start-button:hover {
+  transform: scale(1.02);
+}
+
+.start-button:active {
+  transform: translate(8px, 8px);
+  box-shadow: none;
+}
+
+@keyframes fadeInScreen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flyAndBob {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Media Query untuk layar kecil */
+@media (max-width: 768px) {
+  .start-title {
+    font-size: 1.5em;
+  }
+  .start-button {
+    font-size: 1.2em;
+    padding: 15px 40px;
+  }
+}
